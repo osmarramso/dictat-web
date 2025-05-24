@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  back:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    networks:
+      - dictat-web-network 
+  front:
+    build: .
+    ports:
+      - "8100:8100"
+    networks:
+      - dictat-web-network 
+networks:
+  dictat-web-network:
+    external: true
